@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SONGIFY - Index</title>
+    <title>Register</title>
   </head>
+
   <body>
     <nav>
       <ul
@@ -23,14 +24,5 @@
         <li><a href="account.html">Account</a></li>
       </ul>
     </nav>
-    <div>
-      <h1><i>Songify is your Music Page</i></h1>
-      <p>Welcome to Songify!</p>
-      <p>We have the best Songs from the best <i>Artists</i></p>
-      <p>
-        Dont forget to <i><a href="register.html">register</a></i> first before
-        creating your Playlists.
-      </p>
-    </div>
   </body>
 </html>
