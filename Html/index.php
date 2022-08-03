@@ -9,20 +9,7 @@
 </head>
 
 <body>
-  <nav>
-    <ul style="
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-        ">
-      <li><a href="index.php">Home</a></li>
-      <li><a href="Artist.php">Artist</a></li>
-      <li><a href="songs.php">Song</a></li>
-      <li><a href="playlist.php">Playlist</a></li>
-      <li><a href="register.php">Register/Login</a></li>
-      <li><a href="account.php">Account</a></li>
-    </ul>
-  </nav>
+  <?php include 'navbar.php'; ?>
   <div>
     <h1><i>Songify is your Music Page</i></h1>
     <p>Welcome to Songify!</p>
