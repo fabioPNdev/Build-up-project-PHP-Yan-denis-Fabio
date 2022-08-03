@@ -11,6 +11,7 @@ if ($conn) {
 
     $results = mysqli_query($conn, $query);
 
+    $totalmusic = 'SELECT artist_id,COUNT(title) FROM songs GROUP BY artist_id';
 
     $artists = mysqli_fetch_all($results, MYSQLI_ASSOC);
 } else {
@@ -60,7 +61,8 @@ if ($conn) {
 
         <p>
             <strong>Bio : </strong>
-            <?= $artist['bio']; ?>
+            <?= $artist['bio'];
+            $small = substr($big, 0, 50) ?>
         </p>
         <p>
             <strong>Gender : </strong>
