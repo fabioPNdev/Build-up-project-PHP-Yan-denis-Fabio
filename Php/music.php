@@ -1,3 +1,4 @@
+<?php include   'navbar.php'; ?>
 <?php
 
 // Working With Database
@@ -8,7 +9,7 @@ $conn = mysqli_connect('localhost', 'denis', 'denis', 'spotify_db', 4306);
 // True if connected, false if not
 if ($conn) {
     echo '<br>';
-// (if connection successfull, it will be empty area)
+    // (if connection successfull, it will be empty area)
 
 
     // 2. Prepare the query
@@ -23,12 +24,11 @@ if ($conn) {
     $songs = mysqli_fetch_all($results, MYSQLI_ASSOC);
 
     // echo '<pre>';
-   // var_dump($results);
+    // var_dump($results);
     // echo '</pre>';
-foreach ($songs as $song) {
-    echo $song['title'].'<hr>';
-}
-
+    foreach ($songs as $song) {
+        echo $song['title'] . '<hr>';
+    }
 } else {
     echo 'Problem connecting with the database';
 }

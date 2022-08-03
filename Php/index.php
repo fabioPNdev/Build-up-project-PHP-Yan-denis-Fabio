@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <?php include 'navbar.php'; ?>
+    <?php include   'navbar.php'; ?>
+
     <div>
         <h1><i>Songify is your Music Page</i></h1>
         <p>Welcome to Songify!</p>
