@@ -1,3 +1,23 @@
+<?php include   'navbar.php'; ?>
+
+<?php
+$conn = mysqli_connect('localhost', 'root', '', 'spotify_db');
+if ($conn) {
+    echo 'Connected successfully<br>';
+
+
+    $query = 'SELECT * FROM playlists';
+
+
+    $results = mysqli_query($conn, $query);
+
+    $artists = mysqli_fetch_all($results, MYSQLI_ASSOC);
+} else {
+    echo 'Problem connecting with the database';
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +29,21 @@
 </head>
 
 <body>
+    <?php foreach ($artists as $artist) : ?>
 
+        <p>
+            <strong>Title : </strong>
+            <?= $artist['title']; ?>
+        </p>
+
+        <p>
+            <strong>Date of ceation : </strong>
+            <?= $artist['creation_date']; ?>
+        </p>
+
+        <hr>
+
+    <?php endforeach; ?>
 </body>
 
 </html>

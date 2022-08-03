@@ -6,21 +6,14 @@
 $conn = mysqli_connect('localhost', 'root', '', 'spotify_db');
 if ($conn) {
     echo 'Connected successfully<br>';
-
-
-    $query = 'SELECT * FROM artists';
-
-
-    $results = mysqli_query($conn, $query);
-
-    $totalmusic = 'SELECT artist_id,COUNT(title) FROM songs GROUP BY artist_id';
-
-    $artists = mysqli_fetch_all($results, MYSQLI_ASSOC);
+    $resultcount = mysqli_query($conn, "SELECT artist_id, COUNT(title) AS total FROM songs s INNER JOiN artists a ON s.artist_id = a.id GROUP BY artist_id;");
+    $artists = mysqli_fetch_all($resultcount);
+    echo $artists['total'];
 } else {
+
     echo 'Problem connecting with the database';
 }
 ?>
-
 
 
 
@@ -40,20 +33,7 @@ if ($conn) {
 
 <body>
 
-    <nav>
-        <ul style="
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-        ">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Artist.html">Artist</a></li>
-            <li><a href="songs.html">Song</a></li>
-            <li><a href="playlist.html">Playlist</a></li>
-            <li><a href="register.html">Register/Login</a></li>
-            <li><a href="account.html">Account</a></li>
-        </ul>
-    </nav>
+
     <?php foreach ($artists as $artist) : ?>
 
         <p>
@@ -71,13 +51,11 @@ if ($conn) {
             <?= $artist['gender']; ?>
         </p>
         <p>
-            <strong>Number of Music Written.: </strong>
-            <?= $artist['NofM ']; ?>
-        </p>
 
-        <hr>
 
-    <?php endforeach; ?>
+            <hr>
+
+        <?php endforeach; ?>
 
 
 </body>
